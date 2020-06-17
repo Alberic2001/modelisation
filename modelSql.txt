@@ -1,0 +1,26 @@
+create table questions(idQuestions int not null auto_increment,
+libelleQuestion varchar(2000) not null,
+libelleTypeQuestion varchar(2000) not null,
+points int not null,
+primary key(idQuestions)
+);
+create table reponse(idReponse int not null auto_increment,
+libelleReponse varchar(1000) not null,
+statut vaarchar(10) not null,
+idQuestions int,
+libelleQuestion varchar(2000) not null,
+primary key(idReponse),
+foreign key(idQuestions) references questions(idQuestions)
+);
+create table user(id int not null auto_increment,
+fullName varchar(200) not null,
+login varchar(100) not null,
+pwd varchar(100) not null,
+profil varchar(100) not null,
+avatar varchar(100) not null,
+score int not null
+);
+create table jeu(idJeu int not null auto_increment,
+nbreQuestionsPerGame int not null,
+primary key(idJeu)
+);
